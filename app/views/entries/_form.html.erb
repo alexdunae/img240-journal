@@ -1,0 +1,26 @@
+<%= form_for @entry do |f| %>
+  <% if @entry.errors.any? %>
+    <div class='errors'>
+      <h2>Uh oh, errors!</h2>
+      <% @entry.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class='field'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class='field'>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class='field'>
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>
+
+

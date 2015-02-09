@@ -1,0 +1,20 @@
+<h1>List of Entries</h1>
+
+<p><%= link_to 'New entry', new_entry_path %></p>
+
+<br>
+
+<% @entries.each do |entry| %>
+  <h3><%= entry.title %></h3>
+
+  <p><%= entry.body %></p>
+
+  <p>
+    <%= link_to 'Edit', edit_entry_path(entry) %>
+    *
+    <%= link_to 'Delete', entry_path(entry), method: :delete %>
+  </p>
+
+  <br>
+  <br>
+<% end %>
