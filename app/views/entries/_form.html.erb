@@ -9,6 +9,11 @@
   <% end %>
 
   <div class='field'>
+    <%= f.label :entry_type, 'What type of entry is this?' %>
+    <%= f.collection_select :entry_type_id, EntryType.all, :id, :name %>
+  </div>
+
+  <div class='field'>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
